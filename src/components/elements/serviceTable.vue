@@ -29,6 +29,14 @@
       label="执行合约列表"
       width="300">
     </el-table-column>
+    <el-table-column
+      fixed="right"
+      label="服务具体信息"
+      width="120">
+      <router-link to="/details1">
+        <el-button>details</el-button>
+      </router-link>
+    </el-table-column>
   </el-table>
 </template>
 

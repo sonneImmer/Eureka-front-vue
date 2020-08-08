@@ -29,15 +29,10 @@
       width="300">
     </el-table-column>
     <el-table-column
-      prop="contract_details"
-      label="合约具体信息"
-      width="120">
-    </el-table-column>
-    <el-table-column
       fixed="right"
       label="合约具体信息"
       width="120">
-      <router-link to="/details1">
+      <router-link to="/contract">
         <el-button>details</el-button>
       </router-link>
     </el-table-column>
