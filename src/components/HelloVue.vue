@@ -19,10 +19,10 @@
 </template>
 
 <script>
-import serviceTable from './serviceTable'
-import contractTable from './contractTable'
-import headerAside from './headerAside'
-import serviceStatus from './serviceStatus'
+import serviceTable from './elements/serviceTable'
+import contractTable from './elements/contractTable'
+import headerAside from './elements/headerAside'
+import serviceStatus from './elements/serviceStatus'
 import axios from 'axios'
 
 export default {

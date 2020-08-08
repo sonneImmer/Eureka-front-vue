@@ -37,13 +37,9 @@
       fixed="right"
       label="合约具体信息"
       width="120">
-      <template slot-scope="scope">
-        <el-button
-          type="text"
-          size="small">
-          details
-        </el-button>
-      </template>
+      <router-link to="/details1">
+        <el-button>details</el-button>
+      </router-link>
     </el-table-column>
   </el-table>
 </template>
