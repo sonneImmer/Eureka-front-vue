@@ -2,7 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import indexs from '@/components/indexs'
-import apiTest from '../components/apiTest'
+import HelloVue from '../components/HelloVue'
+import contractTable from '../components/contractTable'
+import test00 from '../components/test00'
 
 Vue.use(Router)
 
@@ -19,9 +21,19 @@ export default new Router({
       component: indexs
     },
     {
-      path: '/apiTest',
-      name: 'apiTest',
-      component: apiTest
+      path: '/HelloVue',
+      name: 'HelloVue',
+      component: HelloVue
+    },
+    {
+      path: '/contractTable',
+      name: 'contractTable',
+      component: contractTable
+    },
+    {
+      path: '/test00',
+      name: 'test00',
+      component: test00
     }
   ]
 })
