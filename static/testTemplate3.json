@@ -1,0 +1,26 @@
+{
+  "contractInfo": {
+    "title_zh": "技术服务合同协议书",
+    "title_en": "IT_Service",
+    "parties": [
+      {
+        "name_zh": "委托方",
+        "name_en": "party_A",
+        "properties": [
+          {
+            "key": "account",
+            "value": "0xB9a8…M37qG6"
+          },
+          {
+            "key": "certificate",
+            "value": "ID.T8b...9V0"
+          }
+        ],
+        "actions": [
+          "RequestRepair",
+          "EndService"
+        ]
+      }
+    ]
+  }
+}

@@ -4,8 +4,8 @@ import HelloWorld from '../components/HelloWorld'
 import HelloVue from '../components/HelloVue'
 import contractTable from '../components/elements/contractTable'
 import admin from '../components/Admin/admin'
-import details from '../components/Details/details'
 import details1 from '../components/Details/details1'
+import details3 from '../components/Details/details3'
 
 Vue.use(Router)
 
@@ -32,9 +32,9 @@ export default new Router({
       component: admin
     },
     {
-      path: '/draft/:number',
-      name: 'draft',
-      component: details,
+      path: '/details/3',
+      name: 'details3',
+      component: details3,
       props: true
     },
     {
