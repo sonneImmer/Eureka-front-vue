@@ -32,7 +32,7 @@ export default new Router({
       component: admin
     },
     {
-      path: '/details/3',
+      path: '/details3',
       name: 'details3',
       component: details3,
       props: true
