@@ -27,7 +27,7 @@
 	party lessee{
 		account : 0x7c1G…m5A0vK,
 		amount: Money
-		RentACar(car: CarNo, rentalPrice: Money, RentalDate: Date, RentalDays: Time)	
+		RentACar(car: CarNo, rentalPrice: Money, RentalDate: Date, RentalDays: Time)
 	}
 </code></pre>
 <br>
@@ -36,7 +36,7 @@
 <p>@@车辆信息：车牌号、品牌、车型、运营年份、颜色、底盘编号等相关信息。</p>
 <pre><code>
 	party car{
-		carNumber : PlateNo
+		carNumber : carNumber
 		brand : Volkswagen
 		model : Golf 1.6 TDI Comfortline
 		yearOfOperation : 2020
@@ -60,7 +60,7 @@
 <p>
 @@租赁公司在租车日期开始前已将所有处于工作状态的车辆交付给租车人。</p>
 <pre><code>
-	term no1_1 : lessor must DealForRent, 
+	term no1_1 : lessor must DealForRent,
   	  when before leaseStartDate
 </code></pre>
 <br>
@@ -94,13 +94,14 @@ Arbitration term : any controversy or claim arising out of or relating to this c
 <code>Contract conclusions:
 This contract may not be modified in any manner unless in writing and signed by both parties.
 This document and any attachments hereto constitute the entire agreement between the parties.
-By signing this agreement, all parties agree to the terms as described above. Both parties will receive two printed copies of this agreement (the copies are valid), and will be responsible for upholding its terms. Both parties agree with conversion from this contract to computer programs on smart contract platform, and approve that the programs’ implementation has the same legal effect. </br>
+By signing this agreement, all parties agree to the terms as described above. Both parties will receive two printed copies of this agreement (the copies are valid), and will be responsible for upholding its terms. Both parties agree with conversion from this contract to computer programs on smart contract platform, and approve that the programs’ implementation has the same legal effect.
+  <br>
 
 @@ 甲方：
 打印名：租赁公司
 法定代表人（签字）：0x23198de393…,
 签订时间：2020/7/12
-Signature of party lessor: 
+Signature of party lessor:
 {
 	printed-Name：Acme Car Rental,
 	signature: 0x23198de393…,
@@ -111,7 +112,7 @@ Signature of party lessor:
 打印名：承租人
 法定代表人（签字）：0x877238201…,
 签订时间：2020/7/12
-Signature of party lessee: 
+Signature of party lessee:
 {
 	printed-Name：Liu Wan
 	signature: 0x877238201…,

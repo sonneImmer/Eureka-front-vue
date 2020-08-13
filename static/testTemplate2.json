@@ -1,8 +1,8 @@
 {
   "contractInfo": {
-    "id" : 3,
-    "title_zh": "技术服务合同协议书",
-    "title_en": "IT_Service",
+    "id" : 2,
+    "title_zh": "服务代理中介合同协议书",
+    "title_en": "Agency_Service",
     "parties": [
       {
         "name_zh": "委托方",
@@ -14,16 +14,20 @@
           },
           {
             "key": "certificate",
-            "value": "ID.T8b...9V0"
+            "value": "IT Comany"
+          },
+          {
+            "key": "service",
+            "value": "[www.xyz.com/service1, www.xyz.com/service2]"
           }
         ],
         "actions": [
-          "RequestRepair",
+          "StartService",
           "EndService"
         ]
       },
       {
-        "name_zh": "服务方",
+        "name_zh": "代理方",
         "name_en": "party_B",
         "properties": [
           {
@@ -43,7 +47,7 @@
     ],
     "vars": [
       {
-        "description": "@@ 服务最低定价",
+        "description": "@@服务最低定价",
         "party_name": null,
         "var": [
           {

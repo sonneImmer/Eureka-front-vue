@@ -96,14 +96,14 @@
             sign.push(signNode.text());
           }
         })
-        alert(party);
-        alert(sign);
+        //alert(party);
+        //alert(sign);
 
         var addressNode = messageNode.children("table").children("tbody").children("tr[name=address]");
         var signNode = messageNode.children("table").children("tbody").children("tr[name=signature]");
         var address = addressNode.children("td[name=contract_address]").text();
 
-        alert("合约地址：" + address);
+        //alert("合约地址：" + address);
 
         this.$message("result：签名成功");
         /*
