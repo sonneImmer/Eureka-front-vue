@@ -4,7 +4,7 @@
     style="width: 100%"
     max-height="250">
     <el-table-column
-      prop="contract_name"
+      prop="title"
       label="合约名称"
       width="120">
     </el-table-column>
@@ -14,27 +14,34 @@
       width="120">
     </el-table-column>
     <el-table-column
-      prop="contract_statu"
+      prop="state"
       label="合约状态"
       width="120">
     </el-table-column>
     <el-table-column
-      prop="contract_address"
+      prop="address"
       label="合约地址"
       width="120">
     </el-table-column>
     <el-table-column
-      prop="service_inuse"
+      prop="microservices"
       label="执行服务列表"
+      width="300">
+    </el-table-column>
+    <el-table-column
+      prop="details_id"
+      label="详情界面"
       width="300">
     </el-table-column>
     <el-table-column
       fixed="right"
       label="合约具体信息"
       width="120">
-      <router-link to="/contract">
-        <el-button>details</el-button>
-      </router-link>
+      <template slot-scope="scope">
+        <el-button @click="gotoDetails(scope.row.details_id)">
+          details
+        </el-button>
+      </template>
     </el-table-column>
   </el-table>
 </template>
@@ -47,6 +54,17 @@ export default {
   },
   data () {
     return {
+    }
+  },
+  methods: {
+    gotoDetails (detailsId) {
+      this.$router.push({
+        name: 'demo',
+        params: {
+          detailsId
+        }
+      })
+      console.log(detailsId)
     }
   }
 }

@@ -23,7 +23,7 @@ import serviceTable from './elements/serviceTable'
 import contractTable from './elements/contractTable'
 import headerAside from './elements/headerAside'
 import serviceStatus from './elements/serviceStatus'
-import axios from 'axios'
+import {contractAll} from '../request/api'
 
 export default {
   name: 'HelloVue',
@@ -36,16 +36,24 @@ export default {
     }
   },
   methods: {
-    getHomeInfo () {
+    /* getHomeInfo () {
       axios.get('../static/test.json')
         .then((response) => {
           this.contractDataList = response.data.contractData
           this.serviceDataList = response.data.serviceData
         })
+    }, */
+    getHomeInfo1 () {
+      contractAll
+        .then(res => {
+          this.contractDataList = res.contractData
+          this.serviceDataList = res.serviceData
+          // console.log(res)
+        })
     }
   },
   mounted () {
-    this.getHomeInfo()
+    this.getHomeInfo1()
   }
 }
 </script>

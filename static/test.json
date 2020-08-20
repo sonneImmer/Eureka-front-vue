@@ -1,28 +1,28 @@
 {
   "contractData": [
     {
-      "contract_name": "合约1",
+      "title": "合约1",
       "sign_in": "IT公司，平台",
-      "contract_statu": "生效",
-      "contract_address": "0xabc...123",
-      "service_inuse": "[Eureka，IT技术保障，]",
-      "contract_details": "Details"
+      "state": "生效",
+      "address": "0xabc...123",
+      "microservices": "[Eureka，IT技术保障，]",
+      "details_id": "Details1"
     },
     {
-      "contract_name": "合约2",
+      "title": "合约2",
       "sign_in": "小明，平台",
-      "contract_statu": "生效",
-      "contract_address": "0x456...bcd",
-      "service_inuse": "服务推荐",
-      "contract_details": "Details"
+      "state": "生效",
+      "address": "0x456...bcd",
+      "microservices": "服务推荐",
+      "details_id": "Details2"
     },
     {
-      "contract_name": "合约3",
+      "title": "合约3",
       "sign_in": "IT公司，小明",
-      "contract_statu": "生效",
-      "contract_address": "0x4ei...8c9",
-      "service_inuse": "Eureka，IT技术保障",
-      "contract_details": "Details"
+      "state": "生效",
+      "address": "0x4ei...8c9",
+      "microservices": "Eureka，IT技术保障",
+      "details_id": "Details3"
     }
   ],
   "serviceData": [
