@@ -80,6 +80,10 @@ servicePrice : Money)}
 Arbitration term : any controversy or claim arising out of or relating to this contract, or the breach thereof, shall be settled by arbitration administered by institution BeijingIneternetCourt.
 </code>
 </pre>
+
+
+
+<!--  已复刻-->
 <br>
 <h3 style="font-weight: bold;">合同订立</h3>
 <p>

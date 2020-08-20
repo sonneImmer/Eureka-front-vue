@@ -1,0 +1,84 @@
+{
+  "contractInfo": {
+    "id" : 1,
+    "title_zh": "网络竞买合同协议书",
+    "title_en": "Auction_Service",
+    "parties": [
+      {
+        "name_zh": "拍卖人",
+        "name_en": "auctioneer",
+        "properties": [
+          {
+            "key": "account",
+            "value": "0xB9a8…M37qG6"
+          }
+        ],
+        "actions": [
+          "StartBidding",
+          "CollectPayment"
+        ]
+      },
+      {
+        "name_zh": "竞买人",
+        "name_en": "bidders",
+        "properties": [
+          {
+            "key": "account",
+            "value": "0x7c1G…m5A0vK"
+          },
+          {
+            "key": "amount",
+            "value": "Money"
+          }
+        ],
+        "actions": [
+          "Bid",
+          "WithdrawOverbidMoney"
+        ]
+      }
+    ],
+    "vars": [
+      {
+        "description": "@@当前最高价、最高出价的竞拍者、竞拍结束时间。",
+        "party_name": "null",
+        "var": [
+          {
+            "key": "highestPrice",
+            "value": "Money"
+          },
+          {
+            "key": "highestBidder",
+            "value": "bidders"
+          },
+          {
+            "key": "biddingStopTime",
+            "value": "Date"
+          }
+        ]
+      },
+      {
+        "description": "@@标的物：竞拍货品，拍卖人需要提供拍卖物的物品名称、数量等相关信息。",
+        "party_name": "info",
+        "var": [
+          {
+            "key": "name",
+            "value": "Name"
+          },
+          {
+            "key": "quantity",
+            "value": "Integer"
+          },
+          {
+            "key": "price",
+            "value": "Money"
+          },
+          {
+            "key": "package",
+            "value": "String"
+          }
+        ]
+      }
+    ]
+  }
+}
+

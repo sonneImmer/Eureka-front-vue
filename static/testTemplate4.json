@@ -1,0 +1,110 @@
+{
+  "contractInfo": {
+    "id" : 4,
+    "title_zh": "汽车租赁合同协议书",
+    "title_en": "Car_Service",
+    "parties": [
+      {
+        "name_zh": "租赁公司",
+        "name_en": "lessor",
+        "properties": [
+          {
+            "key": "account",
+            "value": "0xB9a8…M37qG6"
+          },
+          {
+            "key": "mechanism",
+            "value": "Acme Car Rental"
+          },
+          {
+            "key": "address",
+            "value": "Dikmen Caddesi No：48/15 Dikmen Ankara"
+          },
+          {
+            "key": "No",
+            "value": "+901231231234"
+          }
+        ],
+        "actions": [
+          "ShowRentCar",
+          "DealForRent"
+        ]
+      },
+      {
+        "name_zh": "承租方",
+        "name_en": "lessee",
+        "properties": [
+          {
+            "key": "account",
+            "value": "0x7c1G…m5A0vK"
+          },
+          {
+            "key": "amount",
+            "value": "Money"
+          }
+        ],
+        "actions": [
+          "RentACar"
+        ]
+      }
+    ],
+    "vars": [
+      {
+        "description": "@@车辆信息：车牌号、品牌、车型、运营年份、颜色、底盘编号等相关信息。",
+        "party_name": "car",
+        "var": [
+          {
+            "key": "carNumber",
+            "value": "carNumber"
+          },
+          {
+            "key": "brand",
+            "value": "Volkswagen"
+          },
+          {
+            "key": "model",
+            "value": "Golf 1.6 TDI Comfortline"
+          },
+          {
+            "key": "yearOfOperation",
+            "value": "2020"
+          },
+          {
+            "key": "color",
+            "value": "Red"
+          },
+          {
+            "key": "chassisNumber",
+            "value": "WVWZZZ3CZXW000001"
+          }
+        ]
+      },
+      {
+        "description": "@@租赁详情：付款金额、付款方式、租赁开始日期、租赁结束日期、交货地点等相关信息。",
+        "party_name": null,
+        "var": [
+          {
+            "key": "clausePayment",
+            "value": "217.99 USD"
+          },
+          {
+            "key": "clause",
+            "value": "Bank transfer"
+          },
+          {
+            "key": "leaseStartDate",
+            "value": "13.07.2018"
+          },
+          {
+            "key": "leaseEndDate",
+            "value": "17.07.2018"
+          },
+          {
+            "key": "placeOfDelivery",
+            "value": "Acme car rental headquarters"
+          }
+        ]
+      }
+    ]
+  }
+}

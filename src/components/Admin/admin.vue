@@ -1,161 +1,112 @@
 <template>
   <div>
-    <h1 align="center">服务端</h1>
-    <br>
+    <el-header>
+      <el-page-header @back="goBack" content="服务器端" title="返回">
+      </el-page-header>
+    </el-header>
+
     <div name = "top_container">
-        <div class = "container theme-showcase" role="main" v-for="contract in contracts" :key="contract">
-          <div name="contract_submit" class="col-sm-10 col-sm-offset-1">
-            <h3 style="font-weight: bold;">
-              &nbsp;合约请求&nbsp;&nbsp;
-              <button class="btn btn-default" id="submit_provider_contract2" type="submit" @click="submit_contract($event)">同意部署</button>
-            </h3>
-          </div>
-          <div name="contract_message" class="col-sm-10 col-sm-offset-1">
-            <table class="table table-striped table-bordered" style="word-break:break-all;">
+      <div class = "container theme-showcase" role="main" v-for="(contract,item) in contracts" v-bind:key="item">
+        <el-card class="box-card col-sm-10 col-sm-offset-1" shadow="always">
+          <div name="contract_message" class="">
+            <br>
+            <table class="table table-striped table-bordered" style="word-break:break-all; word-wrap:break-all;">
               <thead>
               <tr>
                 <th style="text-align: center;" class="col-sm-4">参与方</th>
                 <th style="text-align: center;" class="col-sm-8">参与方签名</th>
               </tr>
               </thead>
-              <tbody style="text-align: center;">
-              <tr v-for="party in contract.participant" :key="party">
-                <td name="contract_party">{{ party.name }}</td>
-                <td name="contract_sign" contenteditable="true">{{ party.sign }}</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-          <div name="contract_result" class="col-sm-10 col-sm-offset-1">
-            <table class="table table-bordered" style="word-break:break-all;">
               <tbody>
-              <tr>
-                <td class="col-sm-3" style="font-weight: bold; text-align: center;">合约地址</td>
-                <td name="contract_address" contenteditable="true">{{ contract.address }}</td>
-              </tr>
-              <tr>
-                <td style="font-weight: bold; text-align: center;">签名</td>
-                <td name="sign_platform">null</td>
-              </tr>
+                <tr name="party_sign" v-for="(party,id) in contract.participant" v-bind:key="id">
+                  <td name="contract_party" style="text-align: center;" v-model="party.name">{{ party.name }}</td>
+                  <td name="contract_sign"  style="text-align: left;" v-model="party.sign" contenteditable="true">{{ party.sign }}</td>
+                </tr>
+                <tr name="address">
+                  <td class="col-sm-3" style="text-align: center;">合约地址</td>
+                  <td name="contract_address" style="text-align: left" contenteditable="false">{{ contract.address }}</td>
+                </tr>
+                <tr name="signature">
+                  <td class="col-sm-3" style="text-align: center;">签名</td>
+                  <td name="contract_sign" style="text-align: left" contenteditable="false"></td>
+                </tr>
               </tbody>
             </table>
-            <br><br><br>
+            <div style="text-align: right">
+              <button class="btn btn-default" id="submit_provider_contract2" type="submit" @click="submit_contract($event)">同意部署</button>
+            </div>
           </div>
-        </div>
+        </el-card>
+        <br><br>
+      </div>
     </div>
+    <br><br>
+<!--    <el-footer style="text-align: center">-->
+<!--      <el-pagination-->
+<!--        @size-change="handleSizeChange"-->
+<!--        @current-change="handleCurrentChange"-->
+<!--        :current-page.sync="currentPage3"-->
+<!--        :page-size="2"-->
+<!--        :hide-on-single-page="false"-->
+<!--        layout="prev, pager, next, jumper"-->
+<!--        :total="3">-->
+<!--      </el-pagination>-->
+<!--      <br>-->
+<!--    </el-footer>-->
   </div>
 </template>
 
 <script>
-// eslint-disable-next-line no-unused-vars
-const i = 3
+  import axios from 'axios'
 
-export default {
-  name: 'admin',
-  data () {
-    return {
-      contracts:
-          [
-            {
-              participant: [
-                {
-                  name: 'Amy',
-                  sign: '1axnSBPUDyF2Tuq2NtyszbBTAXeG6krZy9E9oY'
-                },
-                {
-                  name: 'Bob',
-                  sign: '1axnSBPUDyF2Tuq2NtyszbBTAXeG6krZy9E9oY'
-                },
-                {
-                  name: 'Charlic',
-                  sign: '1Tuq2NtyszbBTAXeG6krZy9E9oY'
-                },
-                {
-                  name: 'David',
-                  sign: null
-                }
-              ],
-              address: '17ZXxyT2djyZQES5xBep2TZ3xh4uZ7Nv4xusq2'
-            },
-            {
-              participant: [
-                {
-                  name: 'Amy2',
-                  sign: '1axnSBPUDyF2Tuq2NtyszbBTAXeG6krZy9E9oY'
-                },
-                {
-                  name: 'Bob2',
-                  sign: null
-                },
-                {
-                  name: 'Charlic2',
-                  sign: '1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
-                },
-                {
-                  name: 'David2',
-                  sign: null
-                }
-              ],
-              address: '17ZXxyT2djyZQES5xBep2TZ3xh4uZ7Nv4xusq22222222222'
-            },
-            {
-              participant: [
-                {
-                  name: 'Amy2',
-                  sign: '1axnSBPUDyF2Tuq2NtyszbBTAXeG6krZy9E9oY'
-                },
-                {
-                  name: 'Bob2',
-                  sign: null
-                },
-                {
-                  name: 'Charlic2',
-                  sign: '1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
-                },
-                {
-                  name: 'David2',
-                  sign: null
-                }
-              ],
-              address: '17ZXxyT2djyZQES5xBep2TZ3xh4uZ7Nv4xusq22222222222'
-            }
-          ]
-    }
-  },
-  methods: {
-    submit_contract: function (event) {
-      event = event || window.event
-      var obj = event.srcElement ? event.srcElement : event.target
-      var titleNode = (obj).parent() // H3
-      var submitNode = titleNode.parent('div[name=contract_submit]') // contract_submit
+  var i = 3
+  export default {
+    name: 'admin',
+    components: {
+      //'v-page': pagination,
+    },
+    data () {
+      return {
+        contracts: null,
+      }
+    },
+    mounted() {
+      axios.get('../static/adminTemplate.json')
+        .then((response) => {
+          this.contracts = response.data.contracts
+        })
+    },
+    methods: {
+      submit_contract: function (event) {
+        event = event ? event : window.event;
+        var obj = event.srcElement ? event.srcElement : event.target;
+        var divNode = $(obj).parent();
+        var messageNode = divNode.parent("div[name=contract_message]");
+        var messageListNode = messageNode.children("table").children("tbody").children("tr[name=party_sign]");
+        var party = [];
+        var sign = [];
 
-      var messageNode = submitNode.siblings('div[name=contract_message]')
-      var messageListNode = messageNode.children('table').children('tbody').children('tr')
-      var party = []
-      var sign = []
+        messageListNode.each(function () {
+          var partyNode = $(this).children("td[name=contract_party]");
+          if(partyNode.length > 0) {
+            party.push(partyNode.text());
+          }
+          var signNode = $(this).children("td[name=contract_sign]");
+          if(signNode.length > 0) {
+            sign.push(signNode.text());
+          }
+        })
+        //alert(party);
+        //alert(sign);
 
-      messageListNode.each(function () {
-        var partyNode = (this).children('td[name=contract_party]')
-        if (partyNode.length > 0) {
-          party.push(partyNode.text())
-        }
-        var signNode = (this).children('td[name=contract_sign]')
-        if (signNode.length > 0) {
-          sign.push(signNode.text())
-        }
-      })
-      alert(party)
-      alert(sign)
+        var addressNode = messageNode.children("table").children("tbody").children("tr[name=address]");
+        var signNode = messageNode.children("table").children("tbody").children("tr[name=signature]");
+        var address = addressNode.children("td[name=contract_address]").text();
 
-      var resultNode = submitNode.siblings('div[name=contract_result]')
-      var trNode = resultNode.children('table').children('tbody').children('tr').first()
-      var address = trNode.children('td[name=contract_address]').text()
+        //alert("合约地址：" + address);
 
-      trNode = resultNode.children('table').children('tbody').children('tr').last()
-      var signPlatformNode = trNode.children('td[name=sign_platform]')
-      alert('合约地址：' + address)
-      // alert(signPlatformNode.text());
-      /*
+        this.$message("result：签名成功");
+        /*
             需要传参
             party：参与方
             sign：对应签名
@@ -164,8 +115,18 @@ export default {
             需要返回
             result：签名结果
         */
-      signPlatformNode.text('ILqnQN/BytnGOmwXwo/OSyG5QWJ3alwgL5edPLiG0/OgH2AAmZ6ixwtux2NunPxkHoFx2j4rhBBELDDIw7RxwXw=')
+        signNode.children("td[name=contract_sign]").text("ILqnQN/BytnGOmwXwo/OSyG5QWJ3alwgL5edPLiG0/OgH2AAmZ6ixwtux2NunPxkHoFx2j4rhBBELDDIw7RxwXw=");
+      },
+      goBack: function () {
+        window.history.back()
+      },
     }
   }
-}
 </script>
+
+<style>
+  .el-card {
+    margin-bottom: 25px;
+    padding-top: 10px;
+  }
+</style>
