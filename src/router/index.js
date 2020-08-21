@@ -12,18 +12,21 @@ import details2 from '../components/Details/details2'
 import details3 from '../components/Details/details3'
 import details4 from '../components/Details/details4'
 import allDetails from '../components/Details/all_details'
+import elementTest from '../components/elements/elementTest'
+
+import demo from '../components/Details/demo'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/HelloWorld',
       name: 'HelloWorld',
       component: HelloWorld
     },
     {
-      path: '/HelloVue',
+      path: '/',
       name: 'HelloVue',
       component: HelloVue
     },
@@ -88,6 +91,16 @@ export default new Router({
       meta: {
         title: 'draft'
       }
+    },
+    {
+      path: '/elementTest',
+      name: 'elementTest',
+      component: elementTest
+    },
+    {
+      path: '/demo',
+      name: 'demo',
+      component: demo
     }
   ]
 })

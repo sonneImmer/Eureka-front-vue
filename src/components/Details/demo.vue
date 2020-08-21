@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { contractDetails } from '../../request/api'
+import { contractDetails, contractDetails1 } from '../../request/api'
 
 export default {
   name: 'demo',
@@ -26,6 +26,12 @@ export default {
     },
     getDetails () {
       contractDetails(this.detailsId)
+        .then(res => {
+          this.contractInfo = res.contractInfo
+        })
+    },
+    getDetails1 () {
+      contractDetails1(this.detailsId)
         .then(res => {
           this.contractInfo = res.contractInfo
         })

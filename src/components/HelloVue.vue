@@ -4,16 +4,16 @@
       <header-aside></header-aside>
     </el-aside>
     <el-container>
-      <el-main>
+      <el-header>
         <service-status></service-status>
-      </el-main>
+      </el-header>
       <el-footer>服务发现伙伴</el-footer>
       <el-main>
         <service-table :dataList="serviceDataList"></service-table>
       </el-main>
-      <el-footer>
+      <el-main>
         <contract-table :dataList="contractDataList"></contract-table>
-      </el-footer>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -59,5 +59,10 @@ export default {
 </script>
 
 <style scoped>
+
+.el-aside{
+
+  background-color: #545c64;
+}
 
 </style>

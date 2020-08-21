@@ -1,7 +1,6 @@
 <template>
   <el-row class="tac">
-    <el-col :span="17">
-      <h5>导航</h5>
+    <el-col>
       <el-menu
         default-active="2"
         class="el-menu-vertical-demo"
