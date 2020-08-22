@@ -30,12 +30,12 @@
       <template slot-scope="scope">
 
         <!-- 可以传参 可以用id或者name绑定合同模板里需要的信息参数
-        需要传 参与方对象、交易信息
+        需要传 参与方对象、交易信息-->
 
         <router-link v-bind:to="'/details'+scope.row.id"><el-link type="primary">查看模板</el-link></router-link>
         <el-button @click="handleClick(scope.row.id)" type="text" size="middle">编辑</el-button>
-        <br>-->
-
+        <br>
+,
         <!-- 可以一并转到contract 然后用户自己编辑 contract那里可以加一个交易信息part
         可以添加单条键值对 也可以添加一个对象（也适用于参与方）
         -->
@@ -54,7 +54,16 @@
   export default {
     methods: {
       handleClick(row) {
-        console.log(row);
+        // this.$message('typeId:'+row.id);
+        this.$router.push({name:'draft',params:{num:row.id}})
+        typeId = { conId : row.id };
+        typeId = JSON.stringify(row.id);
+        axios.post('../static/test.json',typeId).then((response) => {
+                       console.log(response);
+                       this.conTypeId = response.data.typeId;
+                        }).catch((response) => {
+                           console.log(response.error)
+                       })
       },
       /*
       // 元素居中
