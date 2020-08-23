@@ -42,6 +42,7 @@
 
 <script>
     import axios from 'axios'
+    import {contractInfo} from '../../request/api'
 
     export default {
       name: "contract_var",
@@ -54,11 +55,20 @@
         }
       },
       mounted () {
-        axios.get('../static/testTemplate4.json')
-          .then((response) => {
-            this.contractInfo = response.data.contractInfo
-          })
+        // axios.get('../static/testTemplate1.json')
+        //   .then((response) => {
+        //     this.contractInfo = response.data.contractInfo
+        //   })
+        this.getContractInfo()
       },
+      methods: {
+        getContractInfo () {
+          contractInfo
+            .then(res => {
+              this.contractInfo = res.contractInfo
+            })
+        }
+      }
     }
 </script>
 
