@@ -55,26 +55,24 @@
     methods: {
       handleClick(row) {
         // this.$message('typeId:'+row.id);
-        this.$router.push({name:'draft',params:{num:row.id}})
-        typeId = { conId : row.id };
-        typeId = JSON.stringify(row.id);
+        // this.$router.push({name:'draft',params:{num:row.id}})
+        // typeId = { conId : row.id };
+        // typeId = JSON.stringify(row.id);
+        /*
         axios.post('../static/test.json',typeId).then((response) => {
                        console.log(response);
                        this.conTypeId = response.data.typeId;
                         }).catch((response) => {
                            console.log(response.error)
                        })
+                       */
+        let getreponse = new api();
+        getreponse.getDataByGet(
+        "getContractRequests",  //后端的接口
+        { template_id: row.id },  //把后端给的字段赋值
+        res => {
+          console.log(res);   //成功后获取的值
       },
-      /*
-      // 元素居中
-      cellStyle({ row, column, rowIndex, columnIndex }){
-       return "text-align:center";
-      },
-      // 表头居中
-      rowClass({ row, rowIndex }){
-       return "text-align:center";
-      }
-      */
     },
     data() {
       return {
