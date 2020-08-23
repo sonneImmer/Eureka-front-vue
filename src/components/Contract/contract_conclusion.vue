@@ -6,36 +6,38 @@
     </p>
     <pre>
 <code>Contract conclusions:
-This contract may not be modified in any manner unless in writing and signed by both parties.
-This document and any attachments hereto constitute the entire agreement between the parties.
-By signing this agreement, all parties agree to the terms as described above.
-  Both parties will receive two printed copies of this agreement (the copies are valid), and will be responsible for upholding its terms.
+  This contract may not be modified in any manner unless in writing and signed by both parties.
+  This document and any attachments hereto constitute the entire agreement between the parties.
+  By signing this agreement, all parties agree to the terms as described above.
+  Both parties will receive two printed copies of this agreement(the copies are valid), and will be responsible for upholding its terms.
   Both parties agree with conversion from this contract to computer programs on smart contract platform, and approve that the programs’ implementation has the same legal effect.
 
-@@ 甲方：
-打印名：某单位
-法定代表人（签字）：0x23198de393…,
-签订时间：2020/7/12
-Signature of party partyA:
-{printed-Name：IT Company,
-  signature: 0x23198de393…,
-  date: 2020/7/12
-}
+  @@ 甲方:
+  打印名 : 某单位
+  法定代表人（签字） : 0x23198de393…,
+  签订时间：2020/7/12
+  Signature of party partyA :
+  {
+    printed-Name : IT Company,
+    signature : 0x23198de393…,
+    date : 2020/7/12
+  }
 
-@@ 乙方：
-打印名：IT公司
-法定代表人（签字）：0x877238201…,
-签订时间：2020/7/12
-Signature of party partyB:
-{
-  printed-Name：Liu Wan,
-  signature: 0x877238201…,
-  date: 2020/7/12
-}
-{printed-Name：Qin Yuan,
-  signature: 0x9340593495…,
-  date: 2020/7/12
-}
+  @@ 乙方:
+  打印名 : IT公司
+  法定代表人（签字）: 0x877238201…,
+  签订时间 : 2020/7/12
+  Signature of party partyB :
+  {
+    printed-Name : Liu Wan,
+    signature : 0x877238201…,
+    date : 2020/7/12
+  }
+  {
+    printed-Name : Qin Yuan,
+    signature : 0x9340593495…,
+    date : 2020/7/12
+  }
 </code>
 </pre>
   </div>
@@ -48,5 +50,10 @@ Signature of party partyB:
 </script>
 
 <style scoped>
-
+  pre{
+    white-space: pre-wrap;           /* css-3 */
+    white-space: -moz-pre-wrap;      /* Mozilla, since 1999 */
+    white-space: -o-pre-wrap;        /* Opera 7 */
+    word-wrap: break-word;           /* Internet Explorer 5.5+ */
+  }
 </style>

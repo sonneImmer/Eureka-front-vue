@@ -58,6 +58,7 @@
 
 <script>
   import axios from 'axios'
+  import {contracts} from '../../request/api'
 
   var i = 3
   export default {
@@ -71,10 +72,11 @@
       }
     },
     mounted() {
-      axios.get('../static/adminTemplate.json')
-        .then((response) => {
-          this.contracts = response.data.contracts
-        })
+      // axios.get('../static/adminTemplate.json')
+      //   .then((response) => {
+      //     this.contracts = response.data.contracts
+      //   })
+      this.getParties()
     },
     methods: {
       submit_contract: function (event) {
@@ -120,6 +122,12 @@
       goBack: function () {
         window.history.back()
       },
+      getParties () {
+        contracts
+          .then(res => {
+            this.contracts = res.contracts
+          })
+      }
     }
   }
 </script>

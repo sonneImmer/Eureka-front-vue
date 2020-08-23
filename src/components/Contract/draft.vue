@@ -140,6 +140,8 @@
   import conparty from './contract_party'
   import convar from './contract_var'
   import conterm from './contract_term'
+  import {contractInfo} from '../../request/api'
+  import {parties} from '../../request/api'
 
   export default {
     name: 'contract',
@@ -153,14 +155,16 @@
       conclusion,conparty,convar,conterm
     },
     mounted () {
-      axios.get('../static/testTemplate4.json')
-        .then((response) => {
-          this.contractInfo = response.data.contractInfo
-        })
-      axios.get('../static/contractTemplate_party.json')
-        .then((response) => {
-          this.parties = response.data.parties
-        })
+      // axios.get('../static/testTemplate1.json')
+      //   .then((response) => {
+      //     this.contractInfo = response.data.contractInfo
+      //   })
+      // axios.get('../static/contractTemplate_party.json')
+      //   .then((response) => {
+      //     this.parties = response.data.parties
+      //   })
+      this.getParties()
+      this.getContractInfo()
     },
     methods: {
       goBack: function () {
@@ -180,6 +184,18 @@
           message: '合约上传成功，等待审核',
           type: 'success'
         });
+      },
+      getParties () {
+        parties
+          .then(res => {
+            this.parties = res.parties
+          })
+      },
+      getContractInfo () {
+        contractInfo
+          .then(res => {
+            this.contractInfo = res.contractInfo
+          })
       }
     }
   }
