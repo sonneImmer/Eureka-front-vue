@@ -5,7 +5,6 @@
 <hr>
 <el-card class="box-card">
 
-
 <el-table
     :data="tableData"
     :align="center"
@@ -51,14 +50,14 @@
 </template>
 
 <script>
-  export default {
-    methods: {
-      handleClick(row) {
-        // this.$message('typeId:'+row.id);
-        // this.$router.push({name:'draft',params:{num:row.id}})
-        // typeId = { conId : row.id };
-        // typeId = JSON.stringify(row.id);
-        /*
+export default {
+  methods: {
+    handleClick: function (row) {
+      // this.$message('typeId:'+row.id);
+      // this.$router.push({name:'draft',params:{num:row.id}})
+      // typeId = { conId : row.id };
+      // typeId = JSON.stringify(row.id);
+      /*
         axios.post('../static/test.json',typeId).then((response) => {
                        console.log(response);
                        this.conTypeId = response.data.typeId;
@@ -66,15 +65,15 @@
                            console.log(response.error)
                        })
                        */
-        let getreponse = new api();
-        getreponse.getDataByGet(
-        "getContractRequests",  //后端的接口
-        { template_id: row.id },  //把后端给的字段赋值
+      /* let getreponse = new api()
+      getreponse.getDataByGet(
+        'getContractRequests', // 后端的接口
+        {template_id: row.id}, // 把后端给的字段赋值
         res => {
-          console.log(res);   //成功后获取的值
-      },
+          console.log(res) // 成功后获取的值
+        }) */
     },
-    data() {
+    data () {
       return {
         contract: {
           title: 'Online Bidding',
@@ -83,23 +82,25 @@
         tableData: [{
           name: '网络竞买合同协议书',
           description: '拍卖细则',
-          id: '1',
+          id: '1'
         }, {
           name: '中介合同协议书',
           description: '中介',
-          id: '2',
+          id: '2'
         }, {
           name: '技术服务合同协议书',
           description: 'IT服务细则',
-          id: '3',
+          id: '3'
         }, {
           name: '汽车租赁合同协议书',
           description: '汽车租赁细则',
-          id: '4',
+          id: '4'
         }]
       }
     }
   }
+}
+
 </script>
 
 <style scoped>
