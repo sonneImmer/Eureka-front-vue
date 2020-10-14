@@ -15,6 +15,7 @@ import allDetails from '../components/Details/all_details'
 import elementTest from '../components/elements/elementTest'
 
 import demo from '../components/Details/demo'
+import submitStatus from '../components/Contract/Status/status'
 
 Vue.use(Router)
 
@@ -44,15 +45,6 @@ export default new Router({
       }
     },
     {
-      path: '/details3',
-      name: 'details3',
-      component: details3,
-      props: true,
-      meta: {
-        title: 'Details'
-      }
-    },
-    {
       path: '/details1',
       name: 'details1',
       component: details1,
@@ -64,6 +56,15 @@ export default new Router({
       path: '/details2',
       name: 'details2',
       component: details2,
+      meta: {
+        title: 'Details'
+      }
+    },
+    {
+      path: '/details3',
+      name: 'details3',
+      component: details3,
+      props: true,
       meta: {
         title: 'Details'
       }
@@ -90,6 +91,14 @@ export default new Router({
       component: draft,
       meta: {
         title: 'draft'
+      }
+    },
+    {
+      path: '/submitStatus',
+      name: 'submitStatus',
+      component: submitStatus,
+      meta: {
+        title: 'submitStatus'
       }
     },
     {

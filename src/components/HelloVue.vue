@@ -30,7 +30,7 @@ export default {
   components: {serviceTable, contractTable, headerAside, serviceStatus},
   data () {
     return {
-      message: 'Hellow Vue!',
+      message: 'Hello Vue!',
       contractDataList: [],
       serviceDataList: []
     }
@@ -61,7 +61,6 @@ export default {
 <style scoped>
 
 .el-aside{
-
   background-color: #545c64;
 }
 

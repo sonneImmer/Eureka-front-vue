@@ -85,14 +85,16 @@
 </template>
 
 <script>
-    import axios from 'axios'
-    import {contractInfo} from '../../request/api'
+    // import axios from 'axios'
+    // import {contractInfo} from '../../request/api'
 
     export default {
       name: "contract_party",
+      props: {
+        contractInfo: null
+      },
       data () {
         return {
-          contractInfo: null,
           form: {
 
           }
@@ -103,15 +105,15 @@
         //   .then((response) => {
         //     this.contractInfo = response.data.contractInfo
         //   })
-        this.getContractInfo()
+        //this.getContractInfo()
       },
       methods: {
-        getContractInfo () {
-          contractInfo
-            .then(res => {
-              this.contractInfo = res.contractInfo
-            })
-        }
+        // getContractInfo () {
+        //   contractInfo
+        //     .then(res => {
+        //       this.contractInfo = res.contractInfo
+        //     })
+        // }
       }
     }
 </script>

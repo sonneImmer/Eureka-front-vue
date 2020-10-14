@@ -8,8 +8,11 @@ export const contractDetails1 = p => getParam('', p)
 export const contractDetails = p => post('', p)
 
 // draft
-export const contractInfo = get('../static/testTemplate1.json')
+export const contractInfo = get('../static/testTemplate2.json')
 export const parties = get('../static/contractTemplate_party.json')
 
 // admin
 export const contracts = get('../static/adminTemplate.json')
+
+//all_details
+export const tableDataList = get('../static/allDetailsList.json')
