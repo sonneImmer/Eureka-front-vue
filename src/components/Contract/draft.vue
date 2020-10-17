@@ -129,6 +129,12 @@
         <br><br>
       </div>
     </div>
+
+<!--    <div class = "container theme-showcase" role="main" v-else>-->
+<!--      <el-card style="text-align: center">-->
+<!--        获取信息错误-->
+<!--      </el-card>-->
+<!--    </div>-->
     <br>
   </div>
 
