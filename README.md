@@ -1,16 +1,27 @@
-# web
+# Eureka-Front-Vue
 
-> 
+> 注册中心前端
 
-## Build Setup
+## Dependencies
+1. node.js
+2. vue
+```
+npm install -g vue-cli
+```
+
+## Quick Start
 
 ``` bash
-# install dependencies
+# cd 项目目录
 npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
+```
 
+
+## Other Build setup
+```
 # build for production with minification
 npm run build
 

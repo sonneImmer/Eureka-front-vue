@@ -26,7 +26,7 @@ import serviceStatus from './elements/serviceStatusBackup'
 import {contractAll} from '../request/api'
 
 export default {
-  name: 'HelloVue',
+  name: 'ServiceMarket',
   components: {serviceTable, contractTable, headerAside, serviceStatus},
   //components: {serviceTable, contractTable, headerAside},
   data () {
