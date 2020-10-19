@@ -15,6 +15,7 @@ import allDetails from '../components/Details/all_details'
 import elementTest from '../components/elements/elementTest'
 
 import demo from '../components/Details/demo'
+import Test1 from '../components/Test/Test1'
 
 Vue.use(Router)
 
