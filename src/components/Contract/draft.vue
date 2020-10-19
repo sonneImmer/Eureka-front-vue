@@ -40,11 +40,11 @@
         </div>
         <hr>
 
-        <conparty></conparty>
+        <conparty :contractInfo="contractInfo"></conparty>
         <br>
-        <convar></convar>
+        <convar :contractInfo="contractInfo"></convar>
 
-        <conterm></conterm>
+        <conterm :contractInfo="contractInfo"></conterm>
 
         <h3 style="font-weight: bold;">
           基本信息
@@ -129,6 +129,12 @@
         <br><br>
       </div>
     </div>
+
+<!--    <div class = "container theme-showcase" role="main" v-else>-->
+<!--      <el-card style="text-align: center">-->
+<!--        获取信息错误-->
+<!--      </el-card>-->
+<!--    </div>-->
     <br>
   </div>
 
@@ -140,7 +146,7 @@
   import conparty from './contract_party'
   import convar from './contract_var'
   import conterm from './contract_term'
-  import {contractInfo} from '../../request/api'
+  //import {contractInfo} from '../../request/api'
   import {parties} from '../../request/api'
 
   export default {
@@ -153,6 +159,9 @@
     },
     components: {
       conclusion,conparty,convar,conterm
+    },
+    created() {
+      this.getQueryId()
     },
     mounted () {
       // axios.get('../static/testTemplate1.json')
@@ -179,11 +188,27 @@
       submit_contract_to_admin: function () {
         console.log(this.parties);
         console.log(this.contractInfo);
+        /*
+        *
+        * */
         this.$notify({
           title: '成功',
           message: '合约上传成功，等待审核',
           type: 'success'
         });
+        axios.get('../static/testSubmitContract.json',{
+          parties : this.parties,
+          contractInfo : this.contractInfo
+        })
+          .then((response) => {
+            let status = response.data.status
+            this.$router.push({
+              path: '/submitStatus',
+              query: {
+                status: status
+              }
+            })
+          })
       },
       getParties () {
         parties
@@ -192,9 +217,20 @@
           })
       },
       getContractInfo () {
-        contractInfo
-          .then(res => {
-            this.contractInfo = res.contractInfo
+        // contractInfo
+        //   .then(res => {
+        //     this.contractInfo = res.contractInfo
+        //   })
+      },
+      getQueryId () {
+        // 取到路由带过来的参数
+        const routerQueryId = this.$route.query.contractId
+        //console.log(routerParams)
+        axios.get('../static/testTemplate' + routerQueryId + '.json',{
+          template_id : routerQueryId
+        })
+          .then((response) => {
+            this.contractInfo = response.data.contractInfo
           })
       }
     }

@@ -33,7 +33,7 @@
               </tbody>
             </table>
             <div style="text-align: right">
-              <button class="btn btn-default" id="submit_provider_contract2" type="submit" @click="submit_contract($event)">同意部署</button>
+              <button class="btn btn-default" id="submit_provider_contract2" type="submit" @click="submit_contract($event)">同意签署</button>
             </div>
           </div>
         </el-card>
@@ -105,9 +105,9 @@
         var signNode = messageNode.children("table").children("tbody").children("tr[name=signature]");
         var address = addressNode.children("td[name=contract_address]").text();
 
-        //alert("合约地址：" + address);
+        //alert("合约地址：" + address);f
 
-        this.$message("result：签名成功");
+        this.$message("result：签署成功");
         /*
             需要传参
             party：参与方

@@ -22,15 +22,16 @@
 import serviceTable from './elements/serviceTable'
 import contractTable from './elements/contractTable'
 import headerAside from './elements/headerAside'
-import serviceStatus from './elements/serviceStatus'
+import serviceStatus from './elements/serviceStatusBackup'
 import {contractAll} from '../request/api'
 
 export default {
-  name: 'HelloVue',
+  name: 'ServiceMarket',
   components: {serviceTable, contractTable, headerAside, serviceStatus},
+  //components: {serviceTable, contractTable, headerAside},
   data () {
     return {
-      message: 'Hellow Vue!',
+      message: 'Hello Vue!',
       contractDataList: [],
       serviceDataList: []
     }
@@ -61,7 +62,6 @@ export default {
 <style scoped>
 
 .el-aside{
-
   background-color: #545c64;
 }
 

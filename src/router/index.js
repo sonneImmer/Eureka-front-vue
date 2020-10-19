@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '../components/HelloWorld'
-import HelloVue from '../components/HelloVue'
+import ServiceMarket from '../components/ServiceMarket'
 import contractTable from '../components/elements/contractTable'
 
 import admin from '../components/Admin/admin'
@@ -15,7 +14,8 @@ import allDetails from '../components/Details/all_details'
 import elementTest from '../components/elements/elementTest'
 
 import demo from '../components/Details/demo'
-import Test1 from '../components/Test/Test1'
+import submitStatus from '../components/Contract/Status/status'
+import HelloWorld from '../components/HelloWorld'
 
 Vue.use(Router)
 
@@ -28,8 +28,8 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'HelloVue',
-      component: HelloVue
+      name: 'serviceMarket',
+      component: ServiceMarket
     },
     {
       path: '/contractTable',
@@ -45,15 +45,6 @@ export default new Router({
       }
     },
     {
-      path: '/details3',
-      name: 'details3',
-      component: details3,
-      props: true,
-      meta: {
-        title: 'Details'
-      }
-    },
-    {
       path: '/details1',
       name: 'details1',
       component: details1,
@@ -65,6 +56,15 @@ export default new Router({
       path: '/details2',
       name: 'details2',
       component: details2,
+      meta: {
+        title: 'Details'
+      }
+    },
+    {
+      path: '/details3',
+      name: 'details3',
+      component: details3,
+      props: true,
       meta: {
         title: 'Details'
       }
@@ -91,6 +91,14 @@ export default new Router({
       component: draft,
       meta: {
         title: 'draft'
+      }
+    },
+    {
+      path: '/submitStatus',
+      name: 'submitStatus',
+      component: submitStatus,
+      meta: {
+        title: 'submitStatus'
       }
     },
     {

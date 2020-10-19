@@ -44,7 +44,7 @@
 export default {
   name: 'serviceTable',
   props: {
-    dataList: []
+    dataList: null
   },
   data: function () {
     return {

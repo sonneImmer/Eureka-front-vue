@@ -50,7 +50,7 @@
 export default {
   name: 'contractTable',
   props: {
-    dataList: []
+    dataList: null
   },
   data () {
     return {

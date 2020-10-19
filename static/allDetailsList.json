@@ -1,0 +1,28 @@
+{
+  "tableData": [
+    {
+      "name": "网络竞买合同协议书",
+      "description": "拍卖细则",
+      "id": "1"
+    },
+    {
+      "name": "中介合同协议书'",
+      "description": "中介",
+      "id": "2"
+    },
+    {
+      "name": "技术服务合同协议书",
+      "description": "IT服务细则",
+      "id": "3"
+    },
+    {
+      "name": "汽车租赁合同协议书",
+      "description": "汽车租赁细则",
+      "id": "4"
+    }
+  ],
+  "contract": {
+    "title": "Online Bidding",
+    "blockchainIdentity": "0xB9a8…M37qG6"
+  }
+}

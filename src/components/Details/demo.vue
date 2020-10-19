@@ -10,9 +10,9 @@
   <hr>
   <h3 style="font-weight: bold;">参与人信息</h3>
   <hr>
-  <p>@@甲方信息：{{this.contractInfo.patie.name_zh}}，登记信息包括：个人账户信息；行为包括：宣布竞拍开始、宣布竞拍结束。</p>
+  <p>@@甲方信息：{{this.contractInfo.party.name_zh}}，登记信息包括：个人账户信息；行为包括：宣布竞拍开始、宣布竞拍结束。</p>
   <pre><code>
-    party {{this.contractInfo.patie.name_en}}{
+    party {{this.contractInfo.party.name_en}}{
       account: [${blockchainIdentity?}]<!--动态账户地址blockchainIdentity-->
       StartBidding(reservePrice: Money, auctionDuration: Date)
       CollectPayment()
@@ -165,12 +165,19 @@ export default {
   data () {
     return {
       msg: '',
-      contractInfo: []
+      contractInfo: {
+        title_zh : '测试合同',
+        title_en : 'test contract',
+        party : {
+          name_zh : '测试参与方',
+          name_en : 'test participant'
+        }
+      }
     }
   },
   created () {
-    this.getParams()
-    this.getDetails()
+    //this.getParams()
+    //this.getDetails()
   },
   methods: {
     getParams () {
