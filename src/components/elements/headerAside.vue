@@ -23,8 +23,8 @@
             <router-link to="/admin">
               <el-menu-item index="1-1">合约部署</el-menu-item>
             </router-link>
-            <router-link to="/admin">
-              <el-menu-item index="1-2">服务审核（待开发）</el-menu-item>
+            <router-link to="/serviceAdmin">
+              <el-menu-item index="1-2">服务审核</el-menu-item>
             </router-link>
           </el-menu-item-group>
         </el-submenu>

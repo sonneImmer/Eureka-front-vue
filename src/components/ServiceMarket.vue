@@ -22,13 +22,11 @@
 import serviceTable from './elements/serviceTable'
 import contractTable from './elements/contractTable'
 import headerAside from './elements/headerAside'
-import serviceStatus from './elements/serviceStatusBackup'
 import {contractAll} from '../request/api'
 
 export default {
   name: 'ServiceMarket',
-  components: {serviceTable, contractTable, headerAside, serviceStatus},
-  //components: {serviceTable, contractTable, headerAside},
+  components: {serviceTable, contractTable, headerAside},
   data () {
     return {
       message: 'Hello Vue!',

@@ -15,17 +15,12 @@ import elementTest from '../components/elements/elementTest'
 
 import demo from '../components/Details/demo'
 import submitStatus from '../components/Contract/Status/status'
-import HelloWorld from '../components/HelloWorld'
+import serviceAdmin from "../components/Admin/serviceAdmin";
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/HelloWorld',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
     {
       path: '/',
       name: 'serviceMarket',
@@ -43,6 +38,11 @@ export default new Router({
       meta: {
         title: 'admin'
       }
+    },
+    {
+      path: '/serviceAdmin',
+      name: 'serviceAdmin',
+      component: serviceAdmin
     },
     {
       path: '/details1',
