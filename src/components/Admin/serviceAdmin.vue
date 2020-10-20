@@ -13,27 +13,27 @@
 </template>
 
 <script>
-import serviceTable from "../elements/serviceTable";
-import serviceStatus from "../elements/serviceStatus"
+import serviceTable from '../elements/serviceTable'
+import serviceStatus from '../elements/serviceStatus'
 import {contractAll} from '../../request/api'
 
 export default {
-  name: "ServiceAdmin",
-  components: [serviceTable, serviceStatus],
+  name: 'ServiceAdmin',
+  components: {serviceTable, serviceStatus},
   methods: {
-    getEurekaServicesInfo() {
+    getEurekaServicesInfo () {
       contractAll.then(res => {
         console.log(res)
         this.serviceDataList = res.serviceData
       })
     }
   },
-  data() {
+  data () {
     return {
       serviceDataList: []
     }
   },
-  mounted() {
+  mounted () {
     this.getEurekaServicesInfo()
   }
 }
