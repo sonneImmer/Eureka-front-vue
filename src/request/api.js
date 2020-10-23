@@ -13,6 +13,7 @@ export const parties = get('../static/contractTemplate_party.json')
 
 // admin
 export const contracts = get('../static/adminTemplate.json')
+export const serviceRequest = get('../static/serviceAdminRequest.json')
 
 //all_details
 export const tableDataList = get('../static/allDetailsList.json')

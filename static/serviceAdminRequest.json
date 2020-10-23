@@ -1,0 +1,28 @@
+{
+  "serviceRequestData": [
+    {
+      "service_name": "Eureka",
+      "area_in": "国内IP",
+      "service_status": "待审核",
+      "provider": "平台"
+    },
+    {
+      "service_name": "IT技术保障",
+      "area_in": "国内IP",
+      "service_status": "待审核",
+      "provider": "IT公司"
+    },
+    {
+      "service_name": "服务推荐",
+      "area_in": "国内IP",
+      "service_status": "待审核",
+      "provider": "平台"
+    },
+    {
+      "service_name": "银行转账",
+      "area_in": "国内IP",
+      "service_status": "待审核",
+      "provider": "银行E"
+    }
+  ]
+}

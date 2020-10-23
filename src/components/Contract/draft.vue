@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-top: 20px">
     <el-header>
       <el-page-header @back="goBack" content="客户端" title="返回">
       </el-page-header>

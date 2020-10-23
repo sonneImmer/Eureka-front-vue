@@ -31,7 +31,7 @@
     <el-table-column
       prop="details_id"
       label="详情界面"
-      width="300">
+      width="280">
     </el-table-column>
     <el-table-column
       fixed="right"

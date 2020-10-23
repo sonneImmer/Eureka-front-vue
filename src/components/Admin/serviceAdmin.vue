@@ -1,44 +1,60 @@
 <template>
-  <div>>
     <el-container>
-      <el-header>
-        <service-status></service-status>
-      </el-header>
-      <el-main>
-        <service-table :dataList="serviceDataList"></service-table>
-      </el-main>
-      <el-footer>服务发现伙伴</el-footer>
+      <el-aside>
+        <header-aside></header-aside>
+      </el-aside>
+<!--          <div class = "container theme-showcase" role="main">-->
+      <el-container>
+        <el-header>
+          <service-status></service-status>
+        </el-header>
+        <el-footer>服务发现伙伴</el-footer>
+        <el-main>
+          <service-admin-table :dataList="serviceRequestData"></service-admin-table>
+        </el-main>
+      </el-container>
+      <!--    </div>-->
+      <!--  </div>-->
     </el-container>
-  </div>
+
 </template>
 
 <script>
-import serviceTable from '../elements/serviceTable'
-import serviceStatus from '../elements/serviceStatus'
-import {contractAll} from '../../request/api'
+import serviceTable from '../Admin/serviceAdminTable'
+import serviceStatus from '../elements/serviceStatusBackup'
+import headerAside from '../elements/headerAside'
+import {serviceRequest} from '../../request/api'
+import ServiceAdminTable from "./serviceAdminTable"
 
 export default {
   name: 'ServiceAdmin',
-  components: {serviceTable, serviceStatus},
-  methods: {
-    getEurekaServicesInfo () {
-      contractAll.then(res => {
-        console.log(res)
-        this.serviceDataList = res.serviceData
-      })
-    }
-  },
+  components: {headerAside, ServiceAdminTable, serviceTable, serviceStatus},
   data () {
     return {
-      serviceDataList: []
+      serviceRequestData: []
     }
   },
   mounted () {
     this.getEurekaServicesInfo()
+  },
+  methods: {
+    getEurekaServicesInfo () {
+      serviceRequest.then(res => {
+        // console.log(res)
+        this.serviceRequestData = res.serviceRequestData
+      })
+    },
+    goBack: function () {
+      window.history.back()
+    }
   }
 }
 </script>
 
 <style scoped>
+
+  .el-aside{
+    background-color: #545c64;
+  }
 
 </style>

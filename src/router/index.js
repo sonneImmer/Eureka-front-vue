@@ -24,7 +24,7 @@ export default new Router({
     {
       path: '/',
       name: 'serviceMarket',
-      component: ServiceMarket
+      component: ServiceMarket,
     },
     {
       path: '/contractTable',
