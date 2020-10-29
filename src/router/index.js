@@ -1,21 +1,40 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+// const ServiceMarket = () =>import('../components/ServiceMarket')
+// const contractTable =() =>import('../components/elements/contractTable')
 import ServiceMarket from '../components/ServiceMarket'
 import contractTable from '../components/elements/contractTable'
 
+// const admin =() =>import('../components/Admin/admin')
+// const draft =() =>import('../components/Contract/draft')
 import admin from '../components/Admin/admin'
 import draft from '../components/Contract/draft'
 
+// const details1 = () =>import('../components/Details/details1')
+// const details2 = () =>import('../components/Details/details2')
+// const details3 = () =>import('../components/Details/details3')
+// const details4 = () =>import('../components/Details/details4')
+// const detailsDraft = () =>import('../components/Details/detailsDraft')
+// const allDetails = () =>import('../components/Details/all_details')
+// const elementTest =() =>import('../components/elements/elementTest')
 import details1 from '../components/Details/details1'
 import details2 from '../components/Details/details2'
 import details3 from '../components/Details/details3'
 import details4 from '../components/Details/details4'
+import detailsDraft from '../components/Details/detailsDraft'
 import allDetails from '../components/Details/all_details'
 import elementTest from '../components/elements/elementTest'
 
+// const demo = ()=>import('../components/Details/demo')
+// const submitStatus = ()=>import('../components/Contract/Status/status')
+// const HelloWorld =()=>import('../components/HelloWorld')
+// const servicesquire =()=>import('../components/Details/servicesquire')
 import demo from '../components/Details/demo'
 import submitStatus from '../components/Contract/Status/status'
 import serviceAdmin from "../components/Admin/serviceAdmin";
+import HelloWorld from '../components/HelloWorld'
+import servicesquire from "../components/Details/servicesquire";
 
 Vue.use(Router)
 
@@ -40,9 +59,11 @@ export default new Router({
       }
     },
     {
+
       path: '/serviceAdmin',
       name: 'serviceAdmin',
       component: serviceAdmin
+
     },
     {
       path: '/details1',
@@ -110,6 +131,11 @@ export default new Router({
       path: '/demo',
       name: 'demo',
       component: demo
+    },
+    {
+      path:'/services',
+      component: servicesquire
     }
-  ]
+  ],
+  mode:'history'
 })

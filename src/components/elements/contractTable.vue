@@ -38,7 +38,7 @@
       label="合约具体信息"
       width="120">
       <template slot-scope="scope">
-        <el-button @click="gotoDetails(scope.row.details_id)">
+        <el-button @click="gotoDetails(scope.row.id)">
           details
         </el-button>
       </template>
@@ -57,14 +57,14 @@ export default {
     }
   },
   methods: {
-    gotoDetails (detailsId) {
+    gotoDetails (row) {
+      console.log(row);
       this.$router.push({
-        name: 'demo',
-        params: {
-          detailsId
+        path: '/detailsDraft',
+        query: {
+          contractId: row
         }
       })
-      console.log(detailsId)
     }
   }
 }

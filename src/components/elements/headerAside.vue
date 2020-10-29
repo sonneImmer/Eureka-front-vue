@@ -32,6 +32,7 @@
             <span>消费者</span>
           </template>
           <el-menu-item-group>
+<<<<<<< HEAD
               <el-menu-item index="/details">服务选择</el-menu-item>
               <el-menu-item index="/admin">合同签署</el-menu-item>
           </el-menu-item-group>
@@ -41,6 +42,22 @@
           <i class="el-icon-setting"></i>
           <span slot="title">服务商</span>
         </el-menu-item>
+=======
+<!--            <template slot="title">管理员</template>-->
+            <router-link to="/details">
+              <el-menu-item index="3-1">服务选择</el-menu-item>
+            </router-link>
+            <router-link to="/services">
+              <el-menu-item index="3-2">合同签署</el-menu-item>
+            </router-link>
+          </el-menu-item-group>
+        </el-submenu>
+
+<!--        <el-menu-item index="4">-->
+<!--          <i class="el-icon-setting"></i>-->
+<!--          <span slot="title">管理员</span>-->
+<!--        </el-menu-item>-->
+>>>>>>> dev-temp
       </el-menu>
     </el-col>
   </el-row>

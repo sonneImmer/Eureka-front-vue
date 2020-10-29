@@ -41,6 +41,9 @@
                 <el-button icon="el-icon-view" type="text" size="middle">查看</el-button>
               </router-link>
               <el-button @click="handleClick(scope.row.id)" icon="el-icon-edit" type="text" size="middle">编辑</el-button>
+              <el-button @click="handleclick2(scope.row.id)" icon="el-icon-view" type="text" size="middle">具体合约</el-button>
+
+
             </template>
           </el-table-column>
         </el-table>
@@ -80,6 +83,14 @@
         console.log(row);
         this.$router.push({
           path: '/draft',
+          query: {
+            contractId: row
+          }
+        })
+      },
+      handleclick2(row){
+        this.$router.push({
+          path: '/detailsDraft',
           query: {
             contractId: row
           }

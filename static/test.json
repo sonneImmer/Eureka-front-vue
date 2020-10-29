@@ -6,7 +6,9 @@
       "state": "生效",
       "address": "0xabc...123",
       "microservices": "[Eureka，IT技术保障，]",
-      "details_id": "Details1"
+      "details_id": "Details1",
+      "id": "1"
+
     },
     {
       "title": "合约2",
@@ -14,7 +16,8 @@
       "state": "生效",
       "address": "0x456...bcd",
       "microservices": "服务推荐",
-      "details_id": "Details2"
+      "details_id": "Details2",
+      "id": "2"
     },
     {
       "title": "合约3",
@@ -22,7 +25,8 @@
       "state": "生效",
       "address": "0x4ei...8c9",
       "microservices": "Eureka，IT技术保障",
-      "details_id": "Details3"
+      "details_id": "Details3",
+      "id": "3"
     }
   ],
   "serviceData": [

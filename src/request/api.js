@@ -17,3 +17,4 @@ export const serviceRequest = get('../static/serviceAdminRequest.json')
 
 //all_details
 export const tableDataList = get('../static/allDetailsList.json')
+
