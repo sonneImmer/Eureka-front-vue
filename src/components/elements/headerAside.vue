@@ -54,16 +54,16 @@
             <router-link to="/details">
               <el-menu-item index="3-1">服务选择</el-menu-item>
             </router-link>
-            <router-link to="/admin">
+            <router-link to="/services">
               <el-menu-item index="3-2">合同签署</el-menu-item>
             </router-link>
           </el-menu-item-group>
         </el-submenu>
 
-        <el-menu-item index="4">
-          <i class="el-icon-setting"></i>
-          <span slot="title">管理员</span>
-        </el-menu-item>
+<!--        <el-menu-item index="4">-->
+<!--          <i class="el-icon-setting"></i>-->
+<!--          <span slot="title">管理员</span>-->
+<!--        </el-menu-item>-->
       </el-menu>
     </el-col>
   </el-row>

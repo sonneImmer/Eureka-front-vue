@@ -16,3 +16,4 @@ export const contracts = get('../static/adminTemplate.json')
 
 //all_details
 export const tableDataList = get('../static/allDetailsList.json')
+
