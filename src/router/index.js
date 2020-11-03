@@ -33,7 +33,7 @@ import elementTest from '../components/elements/elementTest'
 import demo from '../components/Details/demo'
 import submitStatus from '../components/Contract/Status/status'
 import serviceAdmin from "../components/Admin/serviceAdmin";
-import HelloWorld from '../components/HelloWorld'
+// import HelloWorld from '../components/HelloWorld'
 import servicesquire from "../components/Details/servicesquire";
 
 Vue.use(Router)
@@ -107,6 +107,14 @@ export default new Router({
       }
     },
     {
+      path: '/detailsDraft',
+      name: 'detailsDraft',
+      component: detailsDraft,
+      meta: {
+        title: 'detailsDraft'
+      }
+    },
+    {
       path: '/draft',
       name: 'draft',
       component: draft,
@@ -139,3 +147,11 @@ export default new Router({
   ],
   mode:'history'
 })
+// const router=new VueRouter({
+//   routes,
+//   //把这个网页加载从hash变成history模式
+//   mode:'history',
+//   linkActiveClass:'active'
+// })
+// //3.将Router对象传到实例中
+// export default router

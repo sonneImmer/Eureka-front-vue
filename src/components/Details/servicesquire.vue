@@ -13,12 +13,11 @@
         height="250"
         border
         :row-class-name="tableRowClassName"
-        style="width: 100%">
+        style="width: 100%;text-align: center;">
         <el-table-column
-          fixed
           prop="date"
           label="服务名称"
-          width="180">
+          width="200">
         </el-table-column>
         <el-table-column
           prop="name"
@@ -27,15 +26,17 @@
         </el-table-column>
         <el-table-column
           prop="address"
-          label="提供商">
+          label="提供商"
+          width="200">
         </el-table-column>
         <el-table-column
           prop="address"
-          label="执行合约列表">
+          label="执行合约列表"
+          width="300">
         </el-table-column>
         <el-table-column
+          prop="address"
           fixed="right"
-          prop="address"
           width="100"
           label="选择服务">
           <template slot-scope="scope">
@@ -51,12 +52,12 @@
     <div class="container theme-showcase">
     <el-card class="box-card">
     <el-main>
-      <h2 class="title is-2">选择合约模板</h2>
+      <h2 class="title is-2">合约实例</h2>
       <el-table
         :data="tableData"
         border
         height="250"
-        style="width: 100%">
+        style="width: 100%;text-align: center;">
         <el-table-column
           prop="date"
           label="合约名称"
@@ -69,19 +70,28 @@
         </el-table-column>
         <el-table-column
           prop="address"
+          width="180"
           label="合约状态">
         </el-table-column>
         <el-table-column
           prop="address"
+          width="200"
           label="合约地址">
         </el-table-column>
         <el-table-column
           prop="address"
+          width="200"
           label="链接服务列表">
         </el-table-column>
         <el-table-column
           prop="address"
+          width="100"
+          fixed="right"
           label="合约内容">
+          <template slot-scope="scope">
+            <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+            <el-button type="text" size="small">编辑</el-button>
+          </template>
         </el-table-column>
       </el-table>
     </el-main>

@@ -28,11 +28,11 @@
       label="执行服务列表"
       width="300">
     </el-table-column>
-    <el-table-column
-      prop="details_id"
-      label="详情界面"
-      width="280">
-    </el-table-column>
+<!--    <el-table-column-->
+<!--      prop="details_id"-->
+<!--      label="详情界面"-->
+<!--      width="280">-->
+<!--    </el-table-column>-->
     <el-table-column
       fixed="right"
       label="合约具体信息"
