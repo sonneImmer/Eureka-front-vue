@@ -29,7 +29,8 @@
     </el-table-column>
     <el-table-column
       label="审核发布"
-      width="200">
+      fixed="right"
+      width="100">
       <template slot-scope="scope">
         <el-button @click="handleClick(scope.$index)">审核</el-button>
       </template>

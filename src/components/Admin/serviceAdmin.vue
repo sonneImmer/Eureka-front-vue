@@ -11,45 +11,33 @@
             <el-col :span="4">
               <div class="grid-content bg-purple">
                 <div class="sub-title">开发环境</div>
-                <el-input></el-input>
+                <el-input style="font-size: 25px" v-model="registerdata.environment":readonly="true"></el-input>
               </div>
             </el-col>
             <el-col :span="4" :offset="1">
               <div class="grid-content bg-purple">
-                <div class="sub-title">当前时刻</div>
-                <el-input></el-input>
+                <div class="sub-title">cpu数量</div>
+                <el-input style="font-size: 25px" v-model="registerdata['num-of-cpus']":readonly="true"></el-input>
               </div>
             </el-col>
             <el-col :span="4" :offset="1">
               <div class="grid-content bg-purple">
-                <div class="sub-title">租赁到期使能</div>
-                <el-input></el-input>
+                <div class="sub-title">总内存空间</div>
+                <el-input style="font-size: 25px" v-model="registerdata['total-avail-memory']":readonly="true"></el-input>
               </div>
             </el-col>
             <el-col :span="4" :offset="1">
               <div class="grid-content bg-purple">
-                <div class="sub-title">最后一分钟更新</div>
-                <el-input></el-input>
-              </div>
-            </el-col>
-          </el-row>
-          <el-row>
-            <el-col :span="4">
-              <div class="grid-content bg-purple">
-                <div class="sub-title">数据中心</div>
-                <el-input></el-input>
-              </div>
-            </el-col>
-            <el-col :span="4" :offset="1">
-              <div class="grid-content bg-purple">
-                <div class="sub-title">开启时间</div>
-                <el-input></el-input>
+                <div class="sub-title">可用内存空间</div>
+                <el-input style="font-size: 25px" v-model="registerdata['current-memory-usage']":readonly="true"></el-input>
               </div>
             </el-col>
             <el-col :span="4" :offset="1">
               <div class="grid-content bg-purple">
                 <div class="sub-title">更新阙值（分钟）</div>
-                <el-input></el-input>
+                <div>
+                  <el-input style="font-size: 25px;text-align: center" v-model="registerdata['server-uptime']":readonly="true"></el-input>
+                </div>
               </div>
             </el-col>
           </el-row>
@@ -58,14 +46,21 @@
       <el-main>
         <el-card :border="true" style="text-align:center">
           <p style="font-size: 18px">服务发现伙伴</p>
-          <el-row class="demo-autocomplete">
-            <el-col :span="4" >
-              <el-button>服务器1：地区一</el-button>
-            </el-col>
-            <el-col :span="4" :offset="1">
-              <el-button>服务器2：地区二</el-button>
-            </el-col>
-          </el-row>
+            <el-main>
+              <p>服务发现伙伴</p>
+              <el-radio-group  v-model="AuthoCheck">
+                <el-radio-button v-for="(item, index) in arrayservice"
+                          :key="index" :label="item" border>
+                  {{item}}
+                </el-radio-button>
+              </el-radio-group>
+              <el-radio-group disabled v-model="AUtoCheck2">
+                <el-radio-button v-for="(item, index) in unarrayservice"
+                          :key="index" :label="item" border>
+                  {{item}}
+                </el-radio-button>
+              </el-radio-group>
+            </el-main>
         </el-card>
       </el-main>
       <el-main>
@@ -107,7 +102,7 @@
 import serviceTable from '../Admin/serviceAdminTable'
 import serviceStatus from '../elements/serviceStatusBackup'
 import headerAside from '../elements/headerAside'
-import {serviceRequest} from '../../request/api'
+import {registerData, serviceDiscover, serviceRequest} from '../../request/api'
 import ServiceAdminTable from "./serviceAdminTable"
 export default {
   name: 'ServiceAdmin',
@@ -115,6 +110,7 @@ export default {
   data () {
     return {
       serviceRequestData: [],
+      registerdata:"",
       tableData:[
         {
           name:'委托合同',
@@ -128,11 +124,20 @@ export default {
           name:'服务合同合同',
           theme:'Term...'
         },
-      ]
+      ],
+      AuthoCheck: '',
+      AUtoCheck2:'',
+      authTypeList: ['北京','湖南'],
+      getservice:'',
+      arrayservice:[],
+      unarrayservice:[],
+      str1:''
     }
   },
   mounted () {
-    this.getEurekaServicesInfo()
+    // this.getEurekaServicesInfo(),
+    this.getRegisterdata()
+    this.getserviceDiscover()
   },
   methods: {
     getEurekaServicesInfo () {
@@ -140,6 +145,23 @@ export default {
         // console.log(res)
         this.serviceRequestData = res.serviceRequestData
       })
+    },
+    getRegisterdata () {
+      registerData.then(res => {
+        this.registerdata=res
+      })
+    },
+    getserviceDiscover () {
+      serviceDiscover
+        .then(res => {
+          this.getservice=res
+          this.str1=(this.getservice["unavailable-replicas"])
+          this.arrayservice=(this.str1.split(','))
+          this.str1=(this.getservice["available-replicas"])
+          this.unarrayservice=(this.str1.split(','))
+          this.arrayservice=this.arrayservice.filter(item =>item!="")
+          this.unarrayservice=this.unarrayservice.filter(item =>item!="")
+        })
     },
     goBack: function () {
       window.history.back()
