@@ -47,7 +47,6 @@
         <el-card :border="true" style="text-align:center">
           <p style="font-size: 18px">服务发现伙伴</p>
             <el-main>
-              <p>服务发现伙伴</p>
               <el-radio-group  v-model="AuthoCheck">
                 <el-radio-button v-for="(item, index) in arrayservice"
                           :key="index" :label="item" border>
