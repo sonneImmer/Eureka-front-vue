@@ -154,9 +154,9 @@ export default {
       serviceDiscover
         .then(res => {
           this.getservice=res
-          this.str1=(this.getservice["unavailable-replicas"])
-          this.arrayservice=(this.str1.split(','))
           this.str1=(this.getservice["available-replicas"])
+          this.arrayservice=(this.str1.split(','))
+          this.str1=(this.getservice["unavailable-replicas"])
           this.unarrayservice=(this.str1.split(','))
           this.arrayservice=this.arrayservice.filter(item =>item!="")
           this.unarrayservice=this.unarrayservice.filter(item =>item!="")
