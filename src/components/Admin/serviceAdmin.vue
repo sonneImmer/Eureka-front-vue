@@ -126,7 +126,6 @@ export default {
       ],
       AuthoCheck: '',
       AUtoCheck2:'',
-      authTypeList: ['北京','湖南'],
       getservice:'',
       arrayservice:[],
       unarrayservice:[],

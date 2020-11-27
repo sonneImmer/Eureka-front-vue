@@ -35,6 +35,8 @@ import submitStatus from '../components/Contract/Status/status'
 import serviceAdmin from "../components/Admin/serviceAdmin";
 // import HelloWorld from '../components/HelloWorld'
 import servicesquire from "../components/Details/servicesquire";
+import biaoji from "../components/Test/biaoji"
+
 
 Vue.use(Router)
 
@@ -143,6 +145,10 @@ export default new Router({
     {
       path:'/services',
       component: servicesquire
+    },
+    {
+      path:'/biaoji',
+      component: biaoji
     }
   ],
   mode:'history'
