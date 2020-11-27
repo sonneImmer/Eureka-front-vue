@@ -186,9 +186,6 @@
 </template>
 
 <script>
-    // import axios from 'axios'
-    // import {contractInfo} from '../../request/api'
-
     export default {
       name: "contract_term",
       props: {

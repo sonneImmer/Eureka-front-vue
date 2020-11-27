@@ -31,10 +31,6 @@
               <el-input class="contract_title" suffix-icon="el-icon-edit" v-model="contractInfo.title_en" placeholder="合约名en"></el-input>
             </el-col>
             <el-col>
-              <!--            <i-->
-              <!--              class="el-icon-edit el-input__icon"-->
-              <!--              slot="suffix">-->
-              <!--            </i>-->
             </el-col>
           </el-row>
         </div>
@@ -146,7 +142,7 @@
   import conparty from './contract_party'
   import convar from './contract_var'
   import conterm from './contract_term'
-  //import {contractInfo} from '../../request/api'
+  // import {contractInfo} from '../../request/api'
   import {parties} from '../../request/api'
 
   export default {
@@ -225,10 +221,11 @@
       getQueryId () {
         // 取到路由带过来的参数
         const routerQueryId = this.$route.query.contractId
-        //console.log(routerParams)
-        axios.get('../static/testTemplate' + routerQueryId + '.json',{
+        var config = {
           template_id : routerQueryId
-        })
+        }
+        //console.log(routerParams)
+        axios.post('http://mockjs.docway.net/mock/1XJX0v2QztB/eureka/v2/apps/EUREKA/findByIdContractTemplate',config)
           .then((response) => {
             this.contractInfo = response.data.contractInfo
           })

@@ -43,8 +43,8 @@
 
       <br>
 
-      <el-card class="box-card" shadow="always">
-        <div v-if="contractInfo.id == 1">
+      <el-card class="box-card" shadow="always" v-if="Object.keys(contractInfo.parties).length > 1 ">
+        <div v-if="contractInfo.id == 1 ">
           <p>@@乙方信息：{{contractInfo.parties[1].name_zh}}，登记信息包括：个人账户信息、账户余额；行为包括：出价、进行竞拍、撤回无效出价。</p>
         </div>
         <div v-else-if="contractInfo.id == 2">
